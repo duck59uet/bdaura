@@ -40,8 +40,8 @@ RUN tar -zxf state.tar.gz
 RUN mv genesis.json $HOME/.bdaura/genesis.json
 
 RUN rm -rf $HOME/.bdaura/config.yaml
-COPY --from=builder /go/src/github.com/aura-nw/bdaura /root
-RUN cp $HOME/config.yaml $HOME/.bdaura
+## COPY --from=builder /go/src/github.com/aura-nw/bdaura /root
+## RUN cp $HOME/config.yaml $HOME/.bdaura
 ## RUN bdaura parse genesis-file --genesis-file-path $HOME/.bdaura/genesis.json
 
 ## RUN go install -tags 'postgres' github.com/golang-migrate/migrate/v4/cmd/migrate@latest
