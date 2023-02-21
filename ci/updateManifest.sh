@@ -30,12 +30,11 @@ fi
 
 # kustomize
 curl -s "https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/hack/install_kustomize.sh"  | bash
-  ./kustomize edit set image image_bdaura_bdaura=ghcr.io/aura-nw/bdaura-bdaura:${GITHUB_REF_NAME}_${COMMIT_TAG}
-  ./kustomize edit set image image_bdaura_hasura=hasura/graphql-engine:v2.0.4
+  ./kustomize edit set image ${REPO_MANIFEST_TAG_IMAGE}=${CONTAINER_RELEASE_IMAGE}
   rm kustomize
 
 git config --global user.name "${GITHUB_ACTOR}"
 git config --global user.email "user@aura.network"
 git add .
-git commit -m "Update image to bdaura"
+git commit -m "Update image to ${CONTAINER_RELEASE_IMAGE}"
 git push
