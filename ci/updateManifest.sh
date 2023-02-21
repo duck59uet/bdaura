@@ -16,6 +16,10 @@ elif [ ${GITHUB_REF_NAME} = "serenity" ]
 then
   echo 'This is serenity branch'
   cd ${REPO_MANIFEST_ENV_SERENITY}
+elif [ ${GITHUB_REF_NAME} = "euphoria" ]
+then
+  echo 'This is euphoria branch'
+  cd ${REPO_MANIFEST_ENV_EUPHORIA}
 elif [ ${GITHUB_REF_NAME} = "main" ]
 then
   echo 'This is main branch'
@@ -26,7 +30,7 @@ fi
 
 # kustomize
 curl -s "https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/hack/install_kustomize.sh"  | bash
-  ./kustomize edit set image image_bdaura_aurad=ghcr.io/aura-nw/bdaura-aurad:${GITHUB_REF_NAME}_${COMMIT_TAG}
+  ./kustomize edit set image image_bdaura_bdaura=ghcr.io/aura-nw/bdaura-bdaura:${GITHUB_REF_NAME}_${COMMIT_TAG}
   ./kustomize edit set image image_bdaura_hasura=hasura/graphql-engine:v2.0.4
   rm kustomize
 

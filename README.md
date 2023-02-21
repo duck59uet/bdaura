@@ -1,7 +1,7 @@
 # BDAura
 
 BDAura (shorthand for BigDipper Aura) is the [Aura](https://github.com/aura-nw/aura) implementation
-for [BigDipper](https://github.com/forbole/big-dipper).
+for [BigDipper](https://github.com/forbole/big-dipper). This project is based on [BDJuno](https://github.com/forbole/bdjuno).
 
 It extends the custom Aura behavior by adding different handlers and custom operations to make it easier for BigDipper
 showing the data inside the UI.

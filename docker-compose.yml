@@ -34,11 +34,11 @@ services:
       ACTION_BASE_URL: "http://localhost:3000"
     networks:
       - dev_network
-  aurad:
+  bdaura:
     build:
       context: .
       dockerfile: Dockerfile
-    image: ghcr.io/aura-nw/bdaura-aurad:${GITHUB_REF_NAME}_${COMMIT_TAG}
+    image: ghcr.io/aura-nw/bdaura-bdaura:${GITHUB_REF_NAME}_${COMMIT_TAG}
     depends_on:
       - 'postgres'
     restart: always

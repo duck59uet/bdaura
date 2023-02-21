@@ -2,7 +2,7 @@ name: Continuous integration
 
 on:
   push:
-    branches: [main, develop, serenity]
+    branches: [main, develop, serenity, euphoria]
 
 jobs:
   build:
@@ -19,12 +19,13 @@ jobs:
           echo REPO_MANIFEST_BRANCH=master >> $GITHUB_ENV
           echo REPO_MANIFEST_ENV_DEV=./clusters/k8s-dev/horoscope-v2 >> $GITHUB_ENV
           echo REPO_MANIFEST_ENV_MAIN=./clusters/k8s-prod/horoscope-v2 >> $GITHUB_ENV
+          echo REPO_MANIFEST_ENV_EUPHORIA=./clusters/k8s-testnet-euphoria/horoscope-v2 >> $GITHUB_ENV
           echo REPO_MANIFEST_ENV_SERENITY=./clusters/k8s-testnet-serenity/horoscope-v2 >> $GITHUB_ENV
       - uses: isbang/compose-action@v1.1.0
       - name: Push image to github registry
         env:
           GITHUB_USERNAME: ${{ github.actor }}
-          GITHUB_PASSWORD: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_PASSWORD: ${{ secrets.REGISTRY_TOKEN }}
         run: |
           chmod 777 -R ./ci
           ./ci/build.sh
