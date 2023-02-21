@@ -27,4 +27,3 @@ coverage.*
 
 # Env
 .env
-docker/bdaura/config.yaml
