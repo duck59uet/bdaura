@@ -38,7 +38,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    image: ghcr.io/aura-nw/bdaura-bdaura:${GITHUB_REF_NAME}_${COMMIT_TAG}
+    image: ghcr.io/aura-nw/bdaura:${GITHUB_REF_NAME}_${COMMIT_TAG}
 #    depends_on:
 #      - 'postgres'
     restart: always
