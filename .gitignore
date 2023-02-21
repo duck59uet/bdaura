@@ -13,3 +13,18 @@
 
 # Dependency directories (remove the comment below to include it)
 # vendor/
+
+.idea/
+build/
+
+# Configuration
+*.toml
+*.json
+config.yaml
+
+# Coverage
+coverage.*
+
+# Env
+.env
+docker/bdaura/config.yaml
