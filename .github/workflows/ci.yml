@@ -21,7 +21,6 @@ jobs:
           echo REPO_MANIFEST_ENV_MAIN=./clusters/k8s-prod/horoscope-v2 >> $GITHUB_ENV
           echo REPO_MANIFEST_ENV_EUPHORIA=./clusters/k8s-testnet-euphoria/horoscope-v2 >> $GITHUB_ENV
           echo REPO_MANIFEST_ENV_SERENITY=./clusters/k8s-testnet-serenity/horoscope-v2 >> $GITHUB_ENV
-      - uses: isbang/compose-action@v1.1.0
       - name: Push image to github registry
         env:
           GITHUB_USERNAME: ${{ github.actor }}
